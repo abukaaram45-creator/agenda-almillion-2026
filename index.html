@@ -6,6 +6,16 @@
 <title>اجندة المليون التفاعلية 2026 — الإتقان pro: حلول ذكية</title>
 <link rel="icon" href="logo.png">
 <style>
+   /* ------------------------
+   New Logo/Animation Styles
+   ------------------------ */
+.rotating-logo {
+  animation: rotate 8s linear infinite;
+}
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 /* ------------------------
    Variables & Base
    ------------------------ */
@@ -241,12 +251,17 @@ a{color:inherit}
 </head>
 <body>
 
-<div class="header" role="banner">
+
+  <div class="header" role="banner">
   <div class="header-left">
-    <video src="logo.mp4" autoplay loop muted playsinline style="width:68px; height:68px; object-fit:cover; border-radius:10px; box-shadow:0 8px 30px rgba(103,36,210,0.22);" title="اجندة المليون التفاعلية 2026"></video>
+    <svg width="68" height="68" viewBox="0 0 100 100" class="rotating-logo" style="width:68px; height:68px; object-fit:cover; border-radius:10px; box-shadow:0 8px 30px rgba(103,36,210,0.22);" title="الشعار المتحرك">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#6724d2" stroke-width="10" stroke-dasharray="251" />
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#d8238f" stroke-width="10" stroke-dasharray="251" stroke-dashoffset="80" />
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#10c4f8" stroke-width="10" stroke-dasharray="251" stroke-dashoffset="160" />
+    </svg>
     <div>
       <div class="title">اجندة المليون التفاعلية 2026</div>
-      <div class="sub">الإتقان pro: حلول ذكية</div>
+      <div class="sub">الإتقان PRO: حلول ذكية</div>
     </div>
   </div>
 
