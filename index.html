@@ -270,38 +270,36 @@ a{color:inherit}
 
         <div id="tocList" class="toc-list small" role="navigation" aria-label="قائمة الصفحات"></div>
 
-        <div class="hr"></div>
-
-        <div class="quick">
-          <a class="btn" href="#page4">ابدأ القراءة</a>
-          <button class="btn ghost kpi-control-btn" onclick="scrollToKidsSection()">
-            👶 خصم الأطفال
-          </button>
-          <button class="btn ghost kpi-control-btn" onclick="exportData()" title="تنزيل بيانات الدليل">تصدير JSON</button>
-          <button class="btn ghost kpi-control-btn" onclick="importData()" title="استيراد بيانات الدليل">استيراد JSON</button>
-        </div>
-
-        <div class="hr" style="margin-top:12px"></div>
-
-        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
-          <a class="btn ghost" href="https://www.canva.com/design/DAG5V4wKSg0/jq9TZoDqZX8xu3jdcyu1qg/view?utm_content=DAG5V4wKSg0" target="_blank" rel="noopener">فتح قالب كانفا</a>
-          <a class="btn ghost" href="#" id="openTemplates">قوالب جاهزة</a>
-          <a class="btn ghost" href="#" id="openTools">أدوات مجانية</a>
-        </div>
-      </div>
+<div class="header" role="banner">
+  <div class="header-left">
+    <svg width="80" height="80" viewBox="0 0 100 100" class="rotating-logo" style="width:80px; height:80px; object-fit:cover; border-radius:10px; box-shadow:0 8px 30px rgba(103,36,210,0.22);" title="الشعار المتحرك">
       
-      <div class="toc-card" style="margin-top: 20px;">
-        <h3>👶 خصم الأطفال</h3>
-        <div style="text-align: center;">
-          <div style="font-size: 2rem; font-weight: bold; color: var(--g2); margin: 10px 0;" id="sidebarKidsCount">0</div>
-          <div style="color: var(--muted); font-size: 0.9rem;">أطفال/تراخيص</div>
-          <div style="margin-top: 10px; color: var(--g4); font-weight: bold;" id="sidebarDiscount">خصم: 0.00 ر.س</div>
-          <button class="btn kids" onclick="scrollToKidsSection()" style="width: 100%; margin-top: 15px;">
-            تعديل العدد
-          </button>
-        </div>
-      </div>
-    </aside>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="var(--g2)" stroke-width="12" stroke-dasharray="251" />
+      <circle cx="50" cy="50" r="40" fill="none" stroke="var(--g1)" stroke-width="12" stroke-dasharray="251" stroke-dashoffset="80" />
+      <circle cx="50" cy="50" r="40" fill="none" stroke="var(--g3)" stroke-width="12" stroke-dasharray="251" stroke-dashoffset="160" />
+    </svg>
+    <div>
+      <div class="title">اجندة المليون التفاعلية 2026</div>
+      <div class="sub">الإتقان PRO: حلول ذكية</div>
+    </div>
+  </div>
+
+  <div class="header-actions">
+    <div class="price-badge" id="headerPrice">
+      <div class="price-main">99.00 ر.س</div>
+      <div class="price-discount" id="headerDiscount">+ خصم الأطفال</div>
+    </div>
+    
+    <div class="mobile-tools" aria-hidden="true">
+      <button class="btn ghost" id="hamburgerBtn" aria-label="قائمة">☰</button>
+    </div>
+    <button class="btn kids" onclick="scrollToKidsSection()" title="خصم الأطفال">
+      👶 خصم الأطفال
+    </button>
+    <button class="btn ghost" id="downloadHtmlBtn" title="حفظ نسخة HTML" onclick="downloadHtml()">تحميل HTML</button>
+    <button class="btn" id="printBtn" title="طباعة إلى PDF" onclick="window.print()">طباعة PDF</button>
+  </div>
+</div>
 
     <main class="main" id="mainContent">
       <div id="contentArea"></div>
