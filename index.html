@@ -261,36 +261,55 @@ a{color:inherit}
 </head>
 <body>
 
-
- <div class="header" role="banner">
-  <div class="header-left">
-    <svg width="68" height="68" viewBox="0 0 100 100" class="rotating-logo" style="width:68px; height:68px; object-fit:cover; border-radius:10px; box-shadow:0 8px 30px rgba(255,255,255,0.22);" title="الشعار المتحرك">
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#ffffff" stroke-width="10" stroke-dasharray="251" />
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#ffffff" stroke-width="10" stroke-dasharray="251" stroke-dashoffset="80" />
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#ffffff" stroke-width="10" stroke-dasharray="251" stroke-dashoffset="160" />
+<div style="text-align: center; padding: 40px 0; background: white;">
+  <div class="logo-container">
+    <svg width="220" height="220" viewBox="0 0 100 100" class="rotating-logo">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#a5d8ff;" />   <!-- أزرق فاتح -->
+          <stop offset="25%" style="stop-color:#4dabf7;" />  <!-- أزرق متوسط -->
+          <stop offset="40%" style="stop-color:#1971c2;" />  <!-- أزرق غامق -->
+          <stop offset="55%" style="stop-color:#5f3dc4;" />  <!-- انتقال لبنك غامق -->
+          <stop offset="70%" style="stop-color:#795548;" />  <!-- بنك غامق (بني غامق) -->
+          <stop offset="85%" style="stop-color:#364fc7;" />  <!-- كحلي غامق -->
+          <stop offset="100%" style="stop-color:#562b81;" /> <!-- بتنجاني (أرجواني غامق) -->
+        </linearGradient>
+      </defs>
+      
+      <!-- الدائرة الرئيسية الكبيرة -->
+      <circle cx="50" cy="50" r="42" fill="none" stroke="url(#grad1)" stroke-width="14" stroke-linecap="round" />
+      
+      <!-- دوائر داخلية خفيفة لعمق أكتر -->
+      <circle cx="50" cy="50" r="32" fill="none" stroke="url(#grad1)" stroke-width="8" opacity="0.6" stroke-dasharray="4,8" />
+      <circle cx="50" cy="50" r="22" fill="none" stroke="url(#grad1)" stroke-width="6" opacity="0.4" />
     </svg>
-    <div>
-      <div class="title">اجندة المليون التفاعلية 2026</div>
-      <div class="sub">الإتقان PRO: حلول ذكية</div>
-    </div>
   </div>
-
-  <div class="header-actions">
-    <div class="price-badge" id="headerPrice">
-      <div class="price-main">99.00 ر.س</div>
-      <div class="price-discount" id="headerDiscount">+ خصم الأطفال</div>
-    </div>
-    
-    <div class="mobile-tools" aria-hidden="true">
-      <button class="btn ghost" id="hamburgerBtn" aria-label="قائمة">☰</button>
-    </div>
-    <button class="btn kids" onclick="scrollToKidsSection()" title="خصم الأطفال">
-      👶 خصم الأطفال
-    </button>
-    <button class="btn ghost" id="downloadHtmlBtn" title="حفظ نسخة HTML" onclick="downloadHtml()">تحميل HTML</button>
-    <button class="btn" id="printBtn" title="طباعة إلى PDF" onclick="window.print()">طباعة PDF</button>
-  </div>
+  
+  <h1 style="color: #1971c2; font-size: 42px; margin: 25px 0; font-weight: bold;">الإتقان PRO</h1>
+  <p style="color: #562b81; font-size: 28px; margin: 0; font-weight: bold;">حلول ذكية</p>
 </div>
+
+<style>
+  body {
+    background-color: white !important;
+    margin: 0;
+    padding: 0;
+  }
+  .logo-container {
+    display: inline-block;
+    padding: 20px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(25, 113, 194, 0.2);
+  }
+  .rotating-logo {
+    animation: rotate 15s linear infinite;
+  }
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+</style>
 
         <input id="search" class="search" placeholder="ابحث باسم الصفحة أو رقمها..." aria-label="بحث في محتويات الدليل" />
 
