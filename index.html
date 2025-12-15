@@ -1,739 +1,462 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>اجندة المليون التفاعلية 2026 — الإتقان pro: حلول ذكية</title>
-<link rel="icon" href="logo.png">
-<style>
-/* ------------------------
-   Variables & Base
-   ------------------------ */
-:root{
-  --g1:#d8238f;  /* Stronger Pink */
-  --g2:#6724d2;  /* Stronger Purple */
-  --g3:#10c4f8;  /* Stronger Sky */
-  --g4:#2ecc71;  /* Green for kids discount */
-  --bg:#fbfdff;
-  --card:#ffffff;
-  --text:#1a1a1a;
-  --muted:#4a4a4a;
-  --radius:14px;
-  --border:rgba(0,0,0,0.08);
-  --maxw:1100px;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: "Tajawal","Noto Naskh Arabic","Segoe UI",Tahoma,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.45;
-  scroll-behavior:smooth;
-}
-/* ------------------------
-   Header
-   ------------------------ */
-.header{
-  background:linear-gradient(135deg,var(--g2),var(--g1),var(--g3));
-  color:white;padding:20px 18px;display:flex;gap:14px;align-items:center;justify-content:space-between;
-  border-bottom-left-radius:16px;border-bottom-right-radius:16px;
-}
-.header-left{display:flex;gap:12px;align-items:center}
-.header img{width:68px;height:68px;object-fit:cover;border-radius:10px;box-shadow:0 8px 30px rgba(103,36,210,0.22);}
-.header .title{font-size:20px;font-weight:900;line-height:1.2}
-.header .sub{opacity:0.95;font-size:14px;margin-top:4px}
-.header-actions{display:flex;gap:8px;align-items:center}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ط§ط¬ظ†ط¯ط© ط§ظ„ظ…ظ„ظٹظˆظ† ط§ظ„طھظپط§ط¹ظ„ظٹط© 2026 â€” ط§ظ„ط¯ظ„ظٹظ„ ط§ظ„طھظپط§ط¹ظ„ظٹ ط§ظ„ط´ط§ظ…ظ„ ظ„ظ„ظ†ط¬ط§ط­ ط§ظ„ط±ظ‚ظ…ظٹ</title>
+    <link rel="icon" href="logo.png" />
+    <style>
+        /* *********************************
+           Variables & Base
+           ********************************* */
+        :root{
+            --g1:#d8238f; /* Stronger Pink */
+            --g2:#6724d2; /* Stronger Purple */
+            --g3:#10c4f8; /* Stronger Sky */
+            --g4:#2ecc71; /* Green for Kids discount */
+            --bg:#Fbfdff;
+            --card:#ffffff;
+            --text:#1a1a1a;
+            --muted:#4a4a4a;
+            --radius:14px;
+            --border:rgba(0,0,0,0.08);
+            --maxW:1100px;
+        }
+        *{
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+        }
+        body{
+            font-family:'Arial',sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            padding-bottom:100px;
+            text-align:right;
+            line-height:1.6;
+        }
+        a{
+            color:var(--g2);
+            text-decoration:none;
+        }
+        a:hover{
+            text-decoration:underline;
+        }
+        .container{
+            max-width:var(--maxW);
+            margin:20px auto;
+            padding:0 20px;
+        }
+        button{
+            cursor:pointer;
+        }
+        
+        /* *********************************
+           New Logo/Animation Styles (ط£ظƒظˆط§ط¯ ط§ظ„ط­ط±ظƒط©)
+           ********************************* */
+        .rotating-logo {
+          animation: rotate 8s linear infinite;
+        }
+        @keyframes rotate {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
 
-/* عرض السعر في الهيدر */
-.price-badge {
-  background: white;
-  color: var(--g2);
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 120px;
-}
-
-.price-main {
-  font-size: 1.5rem;
-  font-weight: 900;
-}
-
-.price-discount {
-  font-size: 0.8rem;
-  opacity: 0.8;
-  margin-top: 2px;
-}
-
-/* ------------------------
-   Layout
-   ------------------------ */
-.container{max-width:var(--maxw);margin:18px auto;padding:12px;}
-.layout{display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:start}
-@media(max-width:980px){.layout{grid-template-columns:1fr} .nav-fixed{position:static;display:flex;flex-direction:row;overflow:auto;padding:8px 0}}
-
-/* ------------------------
-   Sidebar / TOC
-   ------------------------ */
-.sidebar{position:sticky;top:18px;align-self:start}
-.toc-card{background:var(--card);padding:14px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(94,39,205,0.06)}
-.toc-card h2{margin:0 0 8px 0;font-size:18px;color:var(--g2)}
-.toc-list{font-size:14px;color:var(--muted);line-height:1.6;max-height:380px;overflow:auto;padding-right:6px;white-space:pre-wrap}
-.search{padding:10px;border-radius:12px;border:1px solid var(--border);margin-bottom:10px;width:100%}
-.badge{background:linear-gradient(90deg,var(--g3),var(--g1));color:#fff;padding:6px 10px;border-radius:8px;font-weight:800}
-.sidebar .quick{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-
-/* ------------------------
-   Main content
-   ------------------------ */
-.main{min-height:60vh}
-.section{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(94,39,205,0.04);margin-bottom:18px}
-.section h3{margin:0 0 8px 0;color:var(--g2);font-size:17px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.btn{
-  background:linear-gradient(90deg,var(--g1),var(--g2));
-  color:white;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px;
-  box-shadow:0 6px 18px rgba(103,36,210,0.28);cursor:pointer;border:none;
-  transition: transform 0.2s;
-}
-.btn:hover {
-  transform: translateY(-2px);
-}
-.btn.ghost{
-  background:transparent;color:var(--g2);border:1px solid var(--g2);font-weight:700
-}
-.btn.kids {
-  background: linear-gradient(90deg, var(--g4), #27ae60);
-}
-.small{background:#fcfbff;padding:8px;border-radius:10px;font-size:14px;color:var(--muted)}
-.footer{text-align:center;color:var(--muted);margin:26px 0 80px;padding-bottom:20px}
-
-/* ------------------------
-   Kids Discount Section
-   ------------------------ */
-.kids-section {
-  background: linear-gradient(135deg, #fff9e6, #fff5f5);
-  border: 2px dashed #ffd166;
-  border-radius: var(--radius);
-  padding: 25px;
-  margin: 25px 0;
-}
-
-.kids-counter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-  margin: 20px 0;
-}
-
-.counter-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 3px solid var(--g2);
-  background: white;
-  color: var(--g2);
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.counter-btn:hover {
-  background: var(--g2);
-  color: white;
-  transform: scale(1.1);
-}
-
-.counter-display {
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--g2);
-  min-width: 80px;
-  text-align: center;
-}
-
-.price-details {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px 0;
-}
-
-.price-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px dashed #ddd;
-}
-
-.price-row:last-child {
-  border-bottom: none;
-  font-weight: bold;
-  color: var(--g4);
-  font-size: 1.2rem;
-}
-
-/* ------------------------
-   KPI & Forms
-   ------------------------ */
-.kpi-input-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.kpi-stat{display:flex;align-items:center;justify-content:space-between;padding:10px;border:1px solid var(--border);border-radius:8px;margin-bottom:5px;background:#fcfbff}
-.kpi-stat strong{font-size:16px;font-weight:800;color:var(--g2)}
-.kpi-control-btn{
-  background:rgba(103,36,210,0.06); color:var(--g2); padding:8px 12px; border-radius:10px; font-weight:700; cursor:pointer; font-size:14px;
-  border:1px solid rgba(103,36,210,0.12);
-}
-input[type="number"], input[type="text"], textarea, select{
-  width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);
-  font-size:15px;color:var(--text);margin-top:6px;background:#fbfdff;
-}
-textarea{min-height:80px;resize:vertical;}
-
-/* ------------------------
-   Mobile
-   ------------------------ */
-.mobile-tools{display:none}
-@media(max-width:980px){
-  .header{padding:14px}
-  .header img{width:56px;height:56px}
-  .mobile-tools{display:flex;gap:8px}
-  .sidebar{order:2}
-  .toc-card{display:none}
-  .toc-card.mobile{display:block}
-  .kids-counter {
-    gap: 15px;
-  }
-  .counter-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-  }
-  .counter-display {
-    font-size: 2.5rem;
-  }
-}
-
-/* ------------------------
-   Misc
-   ------------------------ */
-.highlight{padding:8px;border-radius:10px;background:linear-gradient(90deg,rgba(216,35,143,0.12),rgba(103,36,210,0.08));font-weight:700}
-.center{display:flex;align-items:center;justify-content:center;gap:10px}
-.kicker{font-size:12px;color:var(--muted);font-weight:700}
-.meta{font-size:13px;color:var(--muted)}
-.note{font-size:13px;color:var(--muted)}
-a{color:inherit}
-.small-note{font-size:12px;color:var(--muted);margin-top:8px}
-.hr{height:1px;background:var(--border);border-radius:2px;margin:12px 0}
-
-/* highlight for search results */
-.toc-list .hit { background: linear-gradient(90deg, rgba(216,35,143,0.10), rgba(103,36,210,0.06)); padding:4px 6px; border-radius:6px; display:block; margin-bottom:4px; }
-</style>
+        /* *********************************
+           Header
+           ********************************* */
+        .header{
+            background:linear-gradient(135deg,var(--g2),var(--g1),var(--g3));
+            color:white;
+            padding:20px 18px;
+            display:flex;
+            gap:14px;
+            align-items:center;
+            justify-content:space-between;
+            border-bottom-left-radius:16px;
+            border-bottom-right-radius:16px;
+        }
+        .header-left{
+            display:flex;
+            gap:12px;
+            align-items:center;
+        }
+        
+        /* طھظ… ط¥ط²ط§ظ„ط© .header img ط§ظ„ظ‚ط¯ظٹظ…ط© ظˆط§ط³طھط¨ط¯ط§ظ„ظ‡ط§ ط¨ط§ظ„ظ€ SVG */
+        
+        .header .title{
+            font-size:20px;
+            font-weight:900;
+            line-height:1.2;
+        }
+        .header .sub{
+            opacity:0.95;
+            font-size:14px;
+            margin-top:4px;
+        }
+        .header-actions{
+            display:flex;
+            gap:8px;
+            align-items:center;
+        }
+        /* *********************************
+           Price Badge
+           ********************************* */
+        .price-badge{
+            background:white;
+            color:var(--g2);
+            padding:8px 15px;
+            border-radius:var(--radius);
+            text-align:center;
+            min-width:100px;
+            box-shadow:0 8px 30px rgba(0,0,0,0.1);
+        }
+        .price-main{
+            font-size:18px;
+            font-weight:900;
+        }
+        .price-discount{
+            font-size:11px;
+            font-weight:700;
+            color:var(--g1);
+            margin-top:2px;
+        }
+        /* *********************************
+           Buttons
+           ********************************* */
+        .btn{
+            padding:10px 15px;
+            border:none;
+            border-radius:var(--radius);
+            font-size:14px;
+            font-weight:bold;
+            transition:background-color 0.2s,transform 0.1s;
+            white-space:nowrap;
+        }
+        .btn:active{
+            transform:scale(0.98);
+        }
+        .btn:hover{
+            opacity:0.9;
+        }
+        .btn.kids{
+            background:var(--g4);
+            color:white;
+        }
+        .btn.ghost{
+            background:rgba(255,255,255,0.2);
+            color:white;
+        }
+        .btn:not(.kids):not(.ghost){
+            background:linear-gradient(45deg,var(--g1),var(--g2));
+            color:white;
+        }
+        /* *********************************
+           Sidebar / Index (ط§ظ„ظ‚ط§ط¦ظ…ط© ط§ظ„ط¬ط§ظ†ط¨ظٹط©)
+           ********************************* */
+        .sidebar{
+            width:250px;
+            padding:20px;
+            background:var(--card);
+            border-radius:var(--radius);
+            box-shadow:0 0 40px rgba(0,0,0,0.05);
+            position:fixed;
+            top:100px;
+            height:calc(100vh - 120px);
+            overflow-y:auto;
+            z-index:100;
+        }
+        .index-title{
+            font-size:18px;
+            font-weight:bold;
+            color:var(--g2);
+            border-bottom:2px solid var(--border);
+            padding-bottom:10px;
+            margin-bottom:15px;
+        }
+        .index-list{
+            list-style:none;
+        }
+        .index-list li{
+            margin-bottom:8px;
+        }
+        .index-list a{
+            display:block;
+            padding:6px 0;
+            font-size:14px;
+            color:var(--text);
+            transition:color 0.1s;
+        }
+        .index-list a:hover,.index-list a.active{
+            color:var(--g1);
+            text-decoration:none;
+        }
+        /* *********************************
+           Content Area
+           ********************************* */
+        .content{
+            margin-right:270px; /* ظ…ط³ط§ظپط© ظ„ط¬ط§ظ†ط¨ ط§ظ„ظ‚ط§ط¦ظ…ط© */
+            padding:20px;
+            background:var(--card);
+            border-radius:var(--radius);
+            box-shadow:0 0 40px rgba(0,0,0,0.05);
+        }
+        .page{
+            display:none;
+            padding:20px 0;
+            border-bottom:1px solid var(--border);
+        }
+        .page:last-child{
+            border-bottom:none;
+        }
+        .page h2{
+            color:var(--g2);
+            font-size:26px;
+            margin-bottom:15px;
+        }
+        .page p{
+            margin-bottom:15px;
+            color:var(--muted);
+        }
+        .page-actions{
+            display:flex;
+            justify-content:space-between;
+            margin-top:30px;
+        }
+        .page-header{
+            background:linear-gradient(90deg,var(--g1),var(--g2));
+            color:white;
+            padding:15px;
+            border-radius:var(--radius);
+            margin-bottom:20px;
+        }
+        .page-header h3{
+            font-size:20px;
+            font-weight:bold;
+        }
+        .page-header p{
+            font-size:14px;
+            opacity:0.9;
+            color:white;
+            margin:0;
+        }
+        /* *********************************
+           Mobile Adjustments
+           ********************************* */
+        @media (max-width: 900px) {
+            .sidebar {
+                display: none;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                padding: 40px 20px 20px;
+                background: var(--card);
+                box-shadow: none;
+                border-radius: 0;
+                z-index: 1000;
+            }
+            .sidebar.open {
+                display: block;
+            }
+            .content {
+                margin-right: 0;
+            }
+            .mobile-tools {
+                display: block !important;
+            }
+            .btn:not(.ghost) {
+                display: none; /* ط¥ط®ظپط§ط، ط§ظ„ط£ط²ط±ط§ط± ط§ظ„ظƒط¨ظٹط±ط© ظپظٹ ط§ظ„ظ‡ظٹط¯ط± */
+            }
+        }
+        .mobile-tools {
+            display: none;
+        }
+        
+    </style>
 </head>
 <body>
 
-<div class="header" role="banner">
-  <div class="header-left">
-    <video src="logo.mp4" autoplay loop muted playsinline style="width:68px; height:68px; object-fit:cover; border-radius:10px; box-shadow:0 8px 30px rgba(103,36,210,0.22);" title="اجندة المليون التفاعلية 2026"></video>
-    <div>
-      <div class="title">اجندة المليون التفاعلية 2026</div>
-      <div class="sub">الإتقان pro: حلول ذكية</div>
-    </div>
-  </div>
-
-  <div class="header-actions">
-    <div class="price-badge" id="headerPrice">
-      <div class="price-main">99.00 ر.س</div>
-      <div class="price-discount" id="headerDiscount">+ خصم الأطفال</div>
-    </div>
-    
-    <div class="mobile-tools" aria-hidden="true">
-      <button class="btn ghost" id="hamburgerBtn" aria-label="قائمة">☰</button>
-    </div>
-    <button class="btn kids" onclick="scrollToKidsSection()" title="خصم الأطفال">
-      👶 خصم الأطفال
-    </button>
-    <button class="btn ghost" id="downloadHtmlBtn" title="حفظ نسخة HTML" onclick="downloadHtml()">تحميل HTML</button>
-    <button class="btn" id="printBtn" title="طباعة إلى PDF" onclick="window.print()">طباعة PDF</button>
-  </div>
-</div>
-
-<div class="container">
-  <div class="layout">
-    <aside class="sidebar" aria-label="محتويات الدليل">
-      <div class="toc-card">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <div>
-            <div class="kicker">المرجع السريع</div>
-            <h2>محتويات اجندة المليون التفاعلية 2026</h2>
-          </div>
-          <div class="badge" id="pageCount">34 صفحة</div>
-        </div>
-
-        <input id="search" class="search" placeholder="ابحث باسم الصفحة أو رقمها..." aria-label="بحث في محتويات الدليل" />
-
-        <div id="tocList" class="toc-list small" role="navigation" aria-label="قائمة الصفحات"></div>
-
-        <div class="hr"></div>
-
-        <div class="quick">
-          <a class="btn" href="#page4">ابدأ القراءة</a>
-          <button class="btn ghost kpi-control-btn" onclick="scrollToKidsSection()">
-            👶 خصم الأطفال
-          </button>
-          <button class="btn ghost kpi-control-btn" onclick="exportData()" title="تنزيل بيانات الدليل">تصدير JSON</button>
-          <button class="btn ghost kpi-control-btn" onclick="importData()" title="استيراد بيانات الدليل">استيراد JSON</button>
-        </div>
-
-        <div class="hr" style="margin-top:12px"></div>
-
-        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
-          <a class="btn ghost" href="https://www.canva.com/design/DAG5V4wKSg0/jq9TZoDqZX8xu3jdcyu1qg/view?utm_content=DAG5V4wKSg0" target="_blank" rel="noopener">فتح قالب كانفا</a>
-          <a class="btn ghost" href="#" id="openTemplates">قوالب جاهزة</a>
-          <a class="btn ghost" href="#" id="openTools">أدوات مجانية</a>
+    <div class="header" role="banner">
+      <div class="header-left">
+        <video autoplay loop muted playsinline width="80" height="80" style="width:80px; height:80px; object-fit:cover; border-radius:10px; box-shadow:0 8px 30px rgba(103,36,210,0.22);" title="ط§ظ„ط´ط¹ط§ط± ط§ظ„ظ…طھط­ط±ظƒ ط§ظ„ط¬ط¯ظٹط¯">
+            <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663136045352/giairMeekMlzrQUE.mp4" type="video/mp4">
+            <!-- طµظˆط±ط© ط¨ط¯ظٹظ„ط© ظپظٹ ط­ط§ظ„ ظپط´ظ„ طھط­ظ…ظٹظ„ ط§ظ„ظپظٹط¯ظٹظˆ -->
+            <img src="logo.png" alt="ط§ظ„ط´ط¹ط§ط± ط§ظ„ظ…طھط­ط±ظƒ" style="width:80px; height:80px; object-fit:cover; border-radius:10px; box-shadow:0 8px 30px rgba(103,36,210,0.22);">
+        </video>
+        <div>
+          <div class="title">ط§ط¬ظ†ط¯ط© ط§ظ„ظ…ظ„ظٹظˆظ† ط§ظ„طھظپط§ط¹ظ„ظٹط© 2026</div>
+          <div class="sub">ط§ظ„ط¯ظ„ظٹظ„ ط§ظ„طھظپط§ط¹ظ„ظٹ ط§ظ„ط´ط§ظ…ظ„ ظ„ظ„ظ†ط¬ط§ط­ ط§ظ„ط±ظ‚ظ…ظٹ â€” MR PRO</div>
         </div>
       </div>
-      
-      <div class="toc-card" style="margin-top: 20px;">
-        <h3>👶 خصم الأطفال</h3>
-        <div style="text-align: center;">
-          <div style="font-size: 2rem; font-weight: bold; color: var(--g2); margin: 10px 0;" id="sidebarKidsCount">0</div>
-          <div style="color: var(--muted); font-size: 0.9rem;">أطفال/تراخيص</div>
-          <div style="margin-top: 10px; color: var(--g4); font-weight: bold;" id="sidebarDiscount">خصم: 0.00 ر.س</div>
-          <button class="btn kids" onclick="scrollToKidsSection()" style="width: 100%; margin-top: 15px;">
-            تعديل العدد
-          </button>
+
+      <div class="header-actions">
+        <div class="price-badge" id="headerPrice">
+          <div class="price-main">99.00 ط±.ط³</div>
+          <div class="price-discount" id="headerDiscount">+ ط®طµظ… ط§ظ„ط£ط·ظپط§ظ„</div>
         </div>
+        
+        <div class="mobile-tools" aria-hidden="true">
+          <button class="btn ghost" id="hamburgerBtn" aria-label="ظ‚ط§ط¦ظ…ط©">âک°</button>
+        </div>
+        <button class="btn kids" onclick="scrollToKidsSection()" title="ط®طµظ… ط§ظ„ط£ط·ظپط§ظ„">
+          ًں‘¶ ط®طµظ… ط§ظ„ط£ط·ظپط§ظ„
+        </button>
+        <button class="btn ghost" id="downloadHtmlBtn" title="ط­ظپط¸ ظ†ط³ط®ط© HTML" onclick="downloadHtml()">طھط­ظ…ظٹظ„ HTML</button>
+        <button class="btn" id="printBtn" title="ط·ط¨ط§ط¹ط© ط¥ظ„ظ‰ PDF" onclick="window.print()">ط·ط¨ط§ط¹ط© PDF</button>
       </div>
-    </aside>
-
-    <main class="main" id="mainContent">
-      <div id="contentArea"></div>
-      
-      <div class="section kids-section" id="page34">
-        <h3>👨‍👩‍👧‍👦 الصفحة 34: خصم خاص للأطفال - اجندة المليون التفاعلية 2026</h3>
-        
-        <div class="highlight" style="margin-bottom: 20px;">
-          احصل على خصم إضافي 10 ر.س لكل طفل تريد هذه الأجندة له!
-          <br><small>الحد الأقصى 10 أطفال للطلب الواحد. **توصية:** هذا الخصم يمكن تحويله إلى "خصم التراخيص المتعددة" ليتناسب مع سوق الأعمال.</small>
-        </div>
-        
-        <div class="kids-counter">
-          <button class="counter-btn" onclick="changeKids(-1)">−</button>
-          <div>
-            <div class="counter-display" id="kidsCount">0</div>
-            <div style="text-align: center; color: var(--muted); margin-top: 5px;">أطفال/تراخيص</div>
-          </div>
-          <button class="counter-btn" onclick="changeKids(1)">+</button>
-        </div>
-        
-        <div style="text-align: center; margin: 15px 0;">
-          <button onclick="resetKids()" style="background: none; border: 2px solid #ddd; color: #666; padding: 8px 20px; border-radius: 20px; cursor: pointer;">
-            🔄 إعادة التعيين
-          </button>
-        </div>
-        
-        <div class="price-details">
-          <h4 style="text-align: center; color: var(--g2); margin-top: 0;">📊 تفاصيل السعر - اجندة المليون التفاعلية 2026</h4>
-          
-          <div class="price-row">
-            <span>السعر الأساسي:</span>
-            <span>99.00 ر.س</span>
-          </div>
-          
-          <div class="price-row">
-            <span>خصم الأطفال (<span id="kidsCountText">0</span> تراخيص × 10 ر.س):</span>
-            <span id="kidsDiscountValue">0.00 ر.س</span>
-          </div>
-          
-          <div class="price-row">
-            <span>السعر النهائي:</span>
-            <span id="finalPriceDetail">99.00 ر.س</span>
-          </div>
-        </div>
-        
-        <div class="actions" style="justify-content: center;">
-          <button class="btn kids" onclick="applyKidsDiscount()">
-            💰 تطبيق الخصم
-          </button>
-          <button class="btn" onclick="buyWithKidsDiscount()">
-            🛒 اشترِ اجندة المليون الآن
-          </button>
-        </div>
-        
-        <div style="margin-top: 25px; padding: 15px; background: #f0f8ff; border-radius: 10px;">
-          <h4 style="color: var(--g3); margin-top: 0;">💡 ملاحظة هامة - اجندة المليون التفاعلية 2026</h4>
-          <p style="margin: 10px 0; color: var(--muted);">
-            • هذا الخصم <strong>إضافي</strong> على سعر العرض 99 ر.س<br>
-            • يمكنك إضافة التراخيص لاحقاً عند الشراء<br>
-            • الخصم يحفظ تلقائياً في متصفحك<br>
-            • الأجندة تشمل 34 صفحة تفاعلية كاملة
-          </p>
-        </div>
-      </div>
-      <div class="footer">اجندة المليون التفاعلية 2026 — منتجات رقمية عملية • الإتقان pro: حلول ذكية</div>
-    </main>
-  </div>
-</div>
-
-<script>
-/* =============================
-   Content definition - **تم التعديل هنا لضمان اتساق الاسم بالكامل**
-   ============================= */
-const sections = [
-  ["الغلاف","<div class='highlight'>اجندة المليون التفاعلية 2026</div><br/><div class='meta'>الإتقان pro: حلول ذكية</div>"],
-  ["إهداء","هذه الأجندة مُهداة لكل رائد أعمال يبحث عن النجاح الرقمي."],
-  ["مقدمة","مرحبًا بك في اجندة المليون التفاعلية 2026! الإتقان pro: حلول ذكية نحو النجاح الرقمي."],
-  ["كيف تستخدم الأجندة التفاعلية","اضغط على الأزرار، حمّل القوالب، واتبع خطة 14 يوم."],
-  ["من أنا اليوم?",
-    "حقل تعبئة تفاعلي:<br>" +
-    "<label class='note'>ما الذي يهمك الآن؟</label>" +
-    "<input data-key='page5.q1' type='text' placeholder='ما هدفك الأساسي من اجندة المليون التفاعلية؟' oninput='saveField(this)'/>" +
-    "<label class='note'>ما أقوى 3 مهارات لديك تستطيع استثمارها؟</label>" +
-    "<textarea data-key='page5.q2' placeholder='أكتب هنا المهارات...' oninput='saveField(this)'></textarea>"],
-  ["نسخة أحلامي","تمرين: ارسم أو اكتب رؤيتك بعد سنة من استخدام الأجندة."],
-  ["قيم حياتي","رتب قيمك: الأسرة، الصحة، العمل، الحرية المالية."],
-  ["اختبار شخصية بسيط","5 أسئلة اختيارية توجهك إلى الاستراتيجية الأنسب."],
-  ["لوحة أهداف 2025",
-    "أدخل أهدافك الرئيسية القابلة للقياس:<br>" +
-    "<label class='note'>الهدف الرئيسي الأول (مبيعات / عدد عملاء)</label>" +
-    "<input data-key='page9.goal1' type='text' placeholder='مثال: إطلاق المنتج وبيعه 100 مرة في أول 3 أشهر' oninput='saveField(this)'/>" +
-    "<label class='note'>الهدف الرئيسي الثاني (بناء المجتمع / القائمة)</label>" +
-    "<input data-key='page9.goal2' type='text' placeholder='مثال: بناء قائمة بريدية من 500 مشترك فعال' oninput='saveField(this)'/>"],
-  ["خطة 12 أسبوع","مخطط أسابيع مع مهام أساسية وأعمدة متابعة."],
-  ["قائمة الأولويات",
-    "حدد أولوياتك الخمس اليومية للتركيز:<br>" +
-    "<label class='note'>الأولوية رقم 1</label>" +
-    "<input data-key='page11.p1' type='text' oninput='saveField(this)'/>" +
-    "<label class='note'>الأولوية رقم 2</label>" +
-    "<input data-key='page11.p2' type='text' oninput='saveField(this)'/>" +
-    "<label class='note'>الأولوية رقم 3</label>" +
-    "<input data-key='page11.p3' type='text' oninput='saveField(this)'/>"],
-  ["روتين الصباح","استيقاظ – شرب ماء – 20 دقيقة عمل مركز – 10 دقائق تعلم."],
-  ["روتين المساء","استرخاء وتخطيط اليوم التالي."],
-  ["Mood Tracker","مخطط شهري بأيقونات مزاج ومساحة لتحديد الأسباب."],
-  ["Habit Tracker","قالب 30 يوم لعادات قابلة للمتابعة."],
-  ["Sleep Tracker","سجل نوم أسبوعي + نصائح لتحسين النوم."],
-  ["Water Tracker","مربعات لكل كوب ماء — هدف 8 أكواب."],
-  ["تنظيف ذهني","صفحة لتفريغ الأفكار اليومية والتركيز."],
-  ["صفحة الامتنان","قالب يومي: اكتب 3 أشياء ممتنة لها اليوم."],
-  ["تحدي 7 أيام تطوير","جدول يومي لمهمة تطوير صغيرة قابلة للتطبيق."],
-  ["نقاط قوتي",
-    "<label class='note'>اكتب 5 مهارات قوية وكيف تستفيد منها في مشروعك الرقمي:</label>" +
-    "<textarea data-key='page21.strengths' rows='6' placeholder='1. ...\\n2. ...' oninput='saveField(this)'></textarea>"],
-  ["مهارات أريد تطويرها","قائمة مهارات مع مصادر مجانية للتعلم."],
-  ["خطة تطوير شخصية شهرية","قالب شهري مع أهداف قابلة للقياس."],
-  ["منظمة أفكار","هيكلة الفكرة: الجمهور، القيمة، السعر."],
-  ["تنظيم المشاعر","تمارين تنفس وروابط لفيديوهات قصيرة."],
-  ["صفحة فضفضة","مساحة حرة للكتابة."],
-  ["رسالة لنفسي المستقبلية","اكتب رسالة لنفسك بعد 6 أشهر — خيار إرسال عبر إيميل (شرح)"],
-  ["تقييم أسبوعي","نموذج تقييم: نجح / لم ينجح / التالي."],
-  ["تقييم شهري","مصفوفة نتائج وخطوات تصحيحية."],
-  ["الختام","مبروك! شارك رحلتك — زر مشاركة على السوشيال."],
-  // Page 31 - KPI
-  ["لوحة المؤشرات والحسابات", `
-    <div style="font-size:14px;margin-bottom:12px;color:var(--g2);font-weight:700;">أدخل الأرقام لحساب الأرباح والتحويل تلقائياً</div>
-    <div class="kpi-input-grid">
-        <div>
-            <label class="note">الزوار شهرياً</label>
-            <input data-key="kpi.visitors" type="number" placeholder="1000" oninput="saveField(this); calculateKPI()" />
-        </div>
-        <div>
-            <label class="note">العملاء المحتملون (Leads)</label>
-            <input data-key="kpi.leads" type="number" placeholder="120" oninput="saveField(this); calculateKPI()" />
-        </div>
-        <div>
-            <label class="note">المبيعات الشهرية</label>
-            <input data-key="kpi.sales" type="number" placeholder="24" oninput="saveField(this); calculateKPI()" />
-        </div>
-        <div>
-            <label class="note">سعر المنتج (ر.س)</label>
-            <input data-key="kpi.price" type="number" placeholder="29" oninput="saveField(this); calculateKPI()" />
-        </div>
-        <div>
-            <label class="note">الإنفاق الإعلاني (اختياري)</label>
-            <input data-key="kpi.adspend" type="number" placeholder="0" oninput="saveField(this); calculateKPI()" />
-        </div>
     </div>
-    <h4 style="color:var(--g2);margin:16px 0 10px 0">المخرجات المالية ومعدلات التحويل</h4>
-    <div class="kpi-stat"><span>تحويل زائر  →  مشتري</span><strong id="kpi_v2s">—</strong></div>
-    <div class="kpi-stat"><span>الإيراد الإجمالي المتوقع</span><strong id="kpi_rev">—</strong></div>
-    <div class="kpi-stat"><span>تكلفة الحصول على عميل (CAC)</span><strong id="kpi_cac">—</strong></div>
-    `],
-  // Page 32 - Analysis Section
-  ["تحليل المنتج والملاءمة السوقية", `
-    <div style="font-size:14px;margin-bottom:12px;" class="highlight">لتحليل معمق، املأ الحقول أدناه ثم اضغط زر 'تحليل AI' لنسخها في الأداة الخارجية.</div>
-    <label class="note">1. نوع المنتج أو الخدمة التي أقدمها:</label>
-    <input data-key='p32.product_type' id="ai_product_type" type='text' placeholder='مثال: أجندة رقمية للتسويق، استشارات مالية للمشاريع الصغيرة' oninput='saveField(this)'/>
-    <label class='note'>2. المشكلة الرئيسية التي يحلها المنتج:</label>
-    <textarea data-key='p32.pain_point' id="ai_pain_point" placeholder='ما هو أكبر تحدٍ يواجه العميل؟' oninput='saveField(this)'></textarea>
-    <label class='note'>3. أهم 3 منافسين لي في السوق (أو مجالات مشابهة):</label>
-    <textarea data-key='p32.competitors' id="ai_competitors" placeholder='اكتب أسماء المنافسين أو نقاط قوتهم/ضعفهم' oninput='saveField(this)'></textarea>
-    <label class='note'>4. ميزتي التنافسية (USP) التي تجعلني مختلفاً:</label>
-    <textarea data-key='p32.usp' id="ai_usp" placeholder='ما الذي لا يستطيع المنافسون تقليده؟' oninput='saveField(this)'></textarea>
-    <div class="actions">
-        <button class="btn" onclick="copyAIPrompt()">تحليل AI (نسخ النص للاستخدام الخارجي)</button>
-        <a class="btn ghost" href="#" id="openToolsAnalysis">فتح أداة AI</a>
+
+
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <div class="index-title">
+                ط§ظ„ظ…ط±ط¬ط¹ ط§ظ„ط³ط±ظٹط¹
+                <h3 style="color: var(--g1); margin-top: 5px;">ظ…ط­طھظˆظٹط§طھ ط§ط¬ظ†ط¯ط© ط§ظ„ظ…ظ„ظٹظˆظ† ط§ظ„طھظپط§ط¹ظ„ظٹط© 2026</h3>
+            </div>
+            <ul class="index-list" id="indexList">
+                </ul>
+        </div>
+
+        <div class="content" id="content">
+            </div>
     </div>
-    <div style="margin-top:10px;" class="small note">بعد الضغط على زر "تحليل AI" سيتم نسخ ملخص للتحليل إلى ذاكرة الجهاز. الصقه في أداة الذكاء الاصطناعي الخارجية للحصول على استراتيجية تسويق جاهزة.</div>
-  `],
-  // Page 33 - Scenario Generation Section
-  ["أداة توليد السيناريو التسويقي", `
-    <div style="font-size:14px;margin-bottom:12px;" class="highlight">لتوليد سيناريو تسويقي كامل (بوست/فيديو/إيميل) لمنتجك، املأ الحقول ثم اضغط زر 'توليد السيناريو' لنسخها في الأداة الخارجية.</div>
-    <label class="note">1. المنصة التي أريد التسويق عليها:</label>
-    <input data-key='p33.platform' id="scenario_platform" type='text' placeholder='مثال: تيك توك، إنستغرام ستوري، إيميل ترويجي' oninput='saveField(this)'/>
-    <label class="note">2. الهدف الرئيسي من هذا السيناريو:</label>
-    <input data-key='p33.goal' id="scenario_goal" type='text' placeholder='مثال: زيادة الوعي بالمنتج، جلب مشتركين جدد للقائمة البريدية، إتمام عملية بيع' oninput='saveField(this)'/>
-    <label class="note">3. الجمهور المستهدف لهذا السيناريو تحديداً (وصف مختصر):</label>
-    <textarea data-key='p33.audience' id="scenario_audience" placeholder='مثال: رائدات الأعمال المبتدئات بين 25-35 سنة' oninput='saveField(this)'></textarea>
-    <label class="note">4. الفكرة الرئيسية التي يجب أن يرتكز عليها المحتوى (The Big Idea):</label>
-    <textarea data-key='p33.big_idea' id="scenario_big_idea" placeholder='مثال: كيف تحول 3 ساعات عمل إلى دخل 6 أرقام باستخدام هذه الأجندة.' oninput='saveField(this)'></textarea>
-    <div class="actions">
-        <button class="btn" onclick="copyScenarioPrompt()">توليد السيناريو (نسخ النص للاستخدام الخارجي)</button>
-        <a class="btn ghost" href="#" id="openToolsScenario">فتح أداة AI</a>
-    </div>
-    <div style="margin-top:10px;" class="small note">بعد الضغط على زر "توليد السيناريو" سيتم نسخ نص مفصل. الصقه في أداة الذكاء الاصطناعي الخارجية (مثل ChatGPT) ليقوم ببناء السيناريو كاملاً لك.</div>
-  `]
-];
 
-/* =============================
-   Build UI: TOC + Sections
-   ============================= */
-const tocList = document.getElementById('tocList');
-const contentArea = document.getElementById('contentArea');
-const totalPages = sections.length + 1;
-document.getElementById('pageCount').textContent = `${totalPages} صفحة`;
+    <script>
+        // ط¨ظٹط§ظ†ط§طھ ط§ظ„طµظپط­ط§طھ (طھظ… طھط¨ط³ظٹط·ظ‡ط§ ظ„ط¶ظ…ط§ظ† ط¹ظ…ظ„ ط§ظ„طھظ†ظ‚ظ„)
+        const pagesData = [
+            { id: 'page1', title: 'ظ…ظ‚ط¯ظ…ط© ط§ظ„ط£ط¬ظ†ط¯ط©', content: 'ظ‡ظ†ط§ ظ…ط­طھظˆظ‰ ط§ظ„طµظپط­ط© ط§ظ„ط£ظˆظ„ظ‰طŒ ظˆظ‡ظٹ ظ…ظ‚ط¯ظ…ط© ط¹ط§ظ…ط© ط¹ظ† ط§ظ„ط£ط¬ظ†ط¯ط© ظˆط£ظ‡ط¯ط§ظپظ‡ط§ ظ„ظ„ط¹ط§ظ… 2026. ظٹظ…ظƒظ†ظƒ ظˆط¶ط¹ ط£ظٹ ظ†طµ ط£ظˆ طµظˆط± ظ‡ظ†ط§.' },
+            { id: 'page2', title: 'ط§ظ„ط±ط¤ظٹط© ظˆط§ظ„ط£ظ‡ط¯ط§ظپ', content: 'ظپظٹ ظ‡ط°ظ‡ ط§ظ„طµظپط­ط©طŒ ظ†ط­ط¯ط¯ ط§ظ„ط±ط¤ظٹط© ط§ظ„ط·ظ…ظˆط­ط© ظˆط§ظ„ط£ظ‡ط¯ط§ظپ ط§ظ„ط±ط¦ظٹط³ظٹط© ط§ظ„طھظٹ ظ†ط³ط¹ظ‰ ظ„طھط­ظ‚ظٹظ‚ظ‡ط§ ط®ظ„ط§ظ„ ط§ظ„ط¹ط§ظ…. ط§ظ„طھط±ظƒظٹط² ط¹ظ„ظ‰ ط§ظ„ط£ظ‡ط¯ط§ظپ ط§ظ„ط°ظƒظٹط© (SMART).' },
+            { id: 'page3', title: 'طھط®ط·ظٹط· ط§ظ„ط±ط¨ط¹ ط§ظ„ط£ظˆظ„', content: 'طھظپط§طµظٹظ„ ط®ط·ط© ط§ظ„ط¹ظ…ظ„ ظ„ظ„ط±ط¨ط¹ ط§ظ„ط£ظˆظ„ ظ…ظ† ط§ظ„ط¹ط§ظ…طŒ ط¨ظ…ط§ ظپظٹ ط°ظ„ظƒ ط§ظ„ظ…ظ‡ط§ظ… ط§ظ„ظ…ط­ط¯ط¯ط© ظˆط§ظ„ظ…ظˆط§ط¹ظٹط¯ ط§ظ„ظ†ظ‡ط§ط¦ظٹط©.' },
+            { id: 'page4', title: 'طھط®ط·ظٹط· ط§ظ„ط±ط¨ط¹ ط§ظ„ط«ط§ظ†ظٹ', content: 'طھظپط§طµظٹظ„ ط®ط·ط© ط§ظ„ط¹ظ…ظ„ ظ„ظ„ط±ط¨ط¹ ط§ظ„ط«ط§ظ†ظٹ ظ…ظ† ط§ظ„ط¹ط§ظ…طŒ ظ…ط¹ ظ…ط±ط§ط¬ط¹ط© ظˆطھظ‚ظٹظٹظ… ظ„ط£ط¯ط§ط، ط§ظ„ط±ط¨ط¹ ط§ظ„ط£ظˆظ„.' },
+            { id: 'page5', title: 'ظ‚ط³ظ… ط®طµظ… ط§ظ„ط£ط·ظپط§ظ„', content: 'ظ‡ط°ط§ ط§ظ„ظ‚ط³ظ… ظ…ط®طµطµ ظ„طھظپط§طµظٹظ„ ط®طµظ… ط§ظ„ط£ط·ظپط§ظ„طŒ ظˆظƒظٹظپظٹط© ط§ظ„ط§ط³طھظپط§ط¯ط© ظ…ظ†ظ‡طŒ ظˆط§ظ„ط´ط±ظˆط· ظˆط§ظ„ط£ط­ظƒط§ظ….' },
+            { id: 'page6', title: 'ظ…ظ„ط®طµ ظˆط®ط§طھظ…ط©', content: 'ظ…ظ„ط®طµ ظ„ط£ظ‡ظ… ط§ظ„ظ†ظ‚ط§ط· ط§ظ„طھظٹ طھظ… طھظ†ط§ظˆظ„ظ‡ط§ ظپظٹ ط§ظ„ط£ط¬ظ†ط¯ط©طŒ ظˆط®ط·ظˆط§طھ ط§ظ„ط¹ظ…ظ„ ط§ظ„طھط§ظ„ظٹط©.' }
+        ];
 
-sections.forEach((s,i)=>{
-  const idx = i+1;
+        let currentPageIndex = 0;
 
-  const sec = document.createElement('div');
-  sec.className = 'section';
-  sec.id = `page${idx}`;
-  sec.innerHTML = `<h3>${idx}. ${s[0]}</h3><div>${s[1]}</div>
-    <div class="actions">
-      <button class="btn" onclick="window.print()">طباعة PDF</button>
-      ${idx < sections.length + 1 ? `<a class="btn" href="#page${idx+1}">التالي</a>` : ''}
-    </div>`;
-  contentArea.appendChild(sec);
+        // ظˆط¸ظٹظپط© ط¥ط¸ظ‡ط§ط± ط§ظ„طµظپط­ط©
+        function showPage(index) {
+            const pages = document.querySelectorAll('.page');
+            const links = document.querySelectorAll('#indexList a');
+            
+            // ط¥ط®ظپط§ط، ط¬ظ…ظٹط¹ ط§ظ„طµظپط­ط§طھ
+            pages.forEach(page => page.style.display = 'none');
+            links.forEach(link => link.classList.remove('active'));
 
-  const item = document.createElement('div');
-  item.className = 'toc-item';
-  item.innerHTML = `<a href="#page${idx}" style="text-decoration:none;color:inherit">${idx}. ${s[0]}</a>`;
-  tocList.appendChild(item);
-});
+            // ط¥ط¸ظ‡ط§ط± ط§ظ„طµظپط­ط© ط§ظ„ظ…ط·ظ„ظˆط¨ط©
+            if (pages[index]) {
+                pages[index].style.display = 'block';
+                currentPageIndex = index;
+                
+                // طھظپط¹ظٹظ„ ط§ظ„ط±ط§ط¨ط· ظپظٹ ط§ظ„ظ‚ط§ط¦ظ…ط© ط§ظ„ط¬ط§ظ†ط¨ظٹط©
+                const pageId = pagesData[index].id;
+                const activeLink = document.querySelector(`#indexList a[data-page-id="${pageId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        }
 
-// إضافة صفحة الأطفال في TOC
-const kidsItem = document.createElement('div');
-kidsItem.className = 'toc-item';
-kidsItem.innerHTML = `<a href="#page34" style="text-decoration:none;color:inherit">34. خصم خاص للأطفال</a>`;
-tocList.appendChild(kidsItem);
+        // ظˆط¸ظٹظپط© ط§ظ„طھظ†ظ‚ظ„ ظ„ظ„طµظپط­ط© ط§ظ„طھط§ظ„ظٹط©
+        function nextPage() {
+            if (currentPageIndex < pagesData.length - 1) {
+                showPage(currentPageIndex + 1);
+            }
+        }
 
+        // ظˆط¸ظٹظپط© ط§ظ„طھظ†ظ‚ظ„ ظ„ظ„طµظپط­ط© ط§ظ„ط³ط§ط¨ظ‚ط©
+        function prevPage() {
+            if (currentPageIndex > 0) {
+                showPage(currentPageIndex - 1);
+            }
+        }
 
-/* =============================
-   Core Data & Persistence Functions
-   ============================= */
-// **قيم السعر والعملة المحدثة**
-const BASE_PRICE_VALUE = 99; 
-const CURRENCY_STRING = " ر.س"; 
-const KIDS_DISCOUNT_PER_CHILD = 10; 
+        // ظˆط¸ظٹظپط© طھط­ظ…ظٹظ„ HTML (طھظ†ط²ظٹظ„ ط§ظ„ظ…ظ„ظپ ط§ظ„ط­ط§ظ„ظٹ)
+        function downloadHtml() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ط§ط¬ظ†ط¯ط©-ط§ظ„ظ…ظ„ظٹظˆظ†-2026-ظ…طµط­ط­ط©.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
 
-const MAX_KIDS = 10;
-let kidsCount = 0;
-let finalDiscountApplied = 0;
+        // ظˆط¸ظٹظپط© ط§ظ„طھظ…ط±ظٹط± ط¥ظ„ظ‰ ظ‚ط³ظ… ط®طµظ… ط§ظ„ط£ط·ظپط§ظ„ (ظ„ط²ط± "ط®طµظ… ط§ظ„ط£ط·ظپط§ظ„")
+        function scrollToKidsSection() {
+            const kidsPage = document.getElementById('page5'); // ظ†ظپطھط±ط¶ ط£ظ† طµظپط­ط© ط§ظ„ط£ط·ظپط§ظ„ ظ‡ظٹ ط§ظ„ط®ط§ظ…ط³ط©
+            if (kidsPage) {
+                showPage(4); // ط¥ط¸ظ‡ط§ط± ط§ظ„طµظپط­ط© ط§ظ„ط®ط§ظ…ط³ط© (index 4)
+                // ظٹظ…ظƒظ† ط¥ط¶ط§ظپط© طھظ…ط±ظٹط± ط³ظ„ط³ ظ‡ظ†ط§ ط¥ط°ط§ ظ„ط²ظ… ط§ظ„ط£ظ…ط±
+            }
+        }
 
-function saveField(input) {
-  // حفظ بيانات حقول الإدخال في التخزين المحلي
-  if (input.dataset.key) {
-    localStorage.setItem(input.dataset.key, input.value);
-  }
-}
+        // ظˆط¸ظٹظپط© طھط¨ط¯ظٹظ„ ط§ظ„ظ‚ط§ط¦ظ…ط© ط§ظ„ط¬ط§ظ†ط¨ظٹط© ظپظٹ ظˆط¶ط¹ ط§ظ„ط¬ظˆط§ظ„
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
 
-function loadInitialState() {
-  // 1. استعادة عدد الأطفال من التخزين المحلي
-  kidsCount = parseInt(localStorage.getItem('kidsCount')) || 0;
-  updateDiscountDisplay();
-  
-  // 2. استعادة بيانات جميع حقول الإدخال (KPI, Analysis, etc.)
-  document.querySelectorAll('[data-key]').forEach(input => {
-    const savedValue = localStorage.getItem(input.dataset.key);
-    if (savedValue !== null) {
-      input.value = savedValue;
-    }
-  });
+        // *************************************************
+        // ط§ظ„ظƒظˆط¯ ط§ظ„ط±ط¦ظٹط³ظٹ ط§ظ„ط°ظٹ ظٹط¶ظ…ظ† ط¹ظ…ظ„ ط§ظ„طھظپط§ط¹ظ„ظٹط© ط¨ط¹ط¯ طھط­ظ…ظٹظ„ ط§ظ„طµظپط­ط©
+        // *************************************************
+        document.addEventListener('DOMContentLoaded', () => {
+            const content = document.getElementById('content');
+            const indexList = document.getElementById('indexList');
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
 
-  // 3. تحديث مؤشرات KPI بعد تحميل البيانات
-  calculateKPI();
-}
+            // 1. طھظˆظ„ظٹط¯ ط§ظ„ظ…ط­طھظˆظ‰ ظˆط§ظ„ظ‚ط§ط¦ظ…ط© ط§ظ„ط¬ط§ظ†ط¨ظٹط©
+            let contentHTML = '';
+            let indexHTML = '';
+            
+            pagesData.forEach((page, index) => {
+                // طھظˆظ„ظٹط¯ ظ…ط­طھظˆظ‰ ط§ظ„طµظپط­ط§طھ
+                contentHTML += `
+                    <div class="page" id="${page.id}">
+                        <h2>${page.title}</h2>
+                        <div class="page-header">
+                            <h3>${page.title}</h3>
+                            <p>طھظپط§طµظٹظ„ ط¥ط¶ط§ظپظٹط© ط¹ظ† ظ‡ط°ظ‡ ط§ظ„طµظپط­ط©.</p>
+                        </div>
+                        <p>${page.content}</p>
+                        <div class="page-actions">
+                            <button class="btn ghost" onclick="prevPage()" ${index === 0 ? 'disabled' : ''}>ط§ظ„ط³ط§ط¨ظ‚</button>
+                            <button class="btn" onclick="nextPage()" ${index === pagesData.length - 1 ? 'disabled' : ''}>ط§ظ„طھط§ظ„ظٹ</button>
+                        </div>
+                    </div>
+                `;
+                
+                // طھظˆظ„ظٹط¯ ط±ظˆط§ط¨ط· ط§ظ„ظ‚ط§ط¦ظ…ط© ط§ظ„ط¬ط§ظ†ط¨ظٹط©
+                indexHTML += `<li><a href="#" data-page-id="${page.id}" onclick="showPage(${index}); return false;">${page.title}</a></li>`;
+            });
+            
+            content.innerHTML = contentHTML;
+            indexList.innerHTML = indexHTML;
 
-/* =============================
-   Kids Discount System
-   ============================= */
-function updateDiscountDisplay() {
-    // 1. حساب الخصم
-    const totalKidsDiscount = kidsCount * KIDS_DISCOUNT_PER_CHILD;
-    finalDiscountApplied = totalKidsDiscount; 
-    const finalPrice = BASE_PRICE_VALUE - finalDiscountApplied; 
+            // 2. ط¥ط¸ظ‡ط§ط± ط§ظ„طµظپط­ط© ط§ظ„ط£ظˆظ„ظ‰ ط¹ظ†ط¯ ط§ظ„طھط­ظ…ظٹظ„
+            showPage(0);
 
-    // 2. تحديث عناصر الـ HTML
-    document.getElementById('kidsCount').textContent = kidsCount;
-    document.getElementById('sidebarKidsCount').textContent = kidsCount;
-    document.getElementById('kidsCountText').textContent = kidsCount;
-    
-    // استخدام العملة الجديدة
-    document.getElementById('kidsDiscountValue').textContent = `${totalKidsDiscount.toFixed(2)}${CURRENCY_STRING}`; 
-    document.getElementById('sidebarDiscount').textContent = `خصم: ${totalKidsDiscount.toFixed(2)}${CURRENCY_STRING}`; 
-    
-    document.getElementById('finalPriceDetail').textContent = `${finalPrice.toFixed(2)}${CURRENCY_STRING}`;
-    
-    // تحديث سعر الهيدر
-    document.getElementById('headerPrice').innerHTML = `
-        <div class="price-main">${finalPrice.toFixed(2)}${CURRENCY_STRING}</div>
-        <div class="price-discount">+ خصم الأطفال</div>
-    `;
-    
-    // حفظ حالة الخصم في التخزين المحلي
-    localStorage.setItem('kidsCount', kidsCount);
-}
+            // 3. طھظپط¹ظٹظ„ ط²ط± ط§ظ„ظ‚ط§ط¦ظ…ط© ظپظٹ ط§ظ„ط¬ظˆط§ظ„
+            if (hamburgerBtn) {
+                hamburgerBtn.addEventListener('click', toggleSidebar);
+            }
 
-function changeKids(amount) {
-    let newCount = kidsCount + amount;
-    if (newCount < 0) {
-        newCount = 0;
-    } else if (newCount > MAX_KIDS) {
-        newCount = MAX_KIDS;
-        alert(`الحد الأقصى المسموح به هو ${MAX_KIDS} تراخيص/أطفال للطلب الواحد.`);
-    }
-    kidsCount = newCount;
-    updateDiscountDisplay();
-}
-
-function resetKids() {
-    kidsCount = 0;
-    updateDiscountDisplay();
-}
-
-function applyKidsDiscount() {
-    // استخدام العملة الجديدة
-    alert(`تم تطبيق خصم الأطفال بنجاح! خصم إجمالي: ${finalDiscountApplied.toFixed(2)}${CURRENCY_STRING}. السعر النهائي: ${(BASE_PRICE_VALUE - finalDiscountApplied).toFixed(2)}${CURRENCY_STRING}`); 
-}
-
-function buyWithKidsDiscount() {
-    // استخدام العملة الجديدة
-    alert(`جارٍ التحويل لصفحة الدفع. الخصم المطبق: ${finalDiscountApplied.toFixed(2)}${CURRENCY_STRING}. يرجى التأكد من ربط رابط صفحة الدفع الحقيقي هنا.`); 
-    // في الكود النهائي، يوضع هنا رابط الدفع الفعلي
-}
-
-function scrollToKidsSection() {
-    document.getElementById('page34').scrollIntoView({ behavior: 'smooth' });
-}
-
-/* =============================
-   KPI Calculations (Page 31)
-   ============================= */
-function calculateKPI() {
-    const visitors = parseInt(document.querySelector("[data-key='kpi.visitors']").value) || 0;
-    const leads = parseInt(document.querySelector("[data-key='kpi.leads']").value) || 0;
-    const sales = parseInt(document.querySelector("[data-key='kpi.sales']").value) || 0;
-    const price = parseFloat(document.querySelector("[data-key='kpi.price']").value) || 0;
-    const adspend = parseFloat(document.querySelector("[data-key='kpi.adspend']").value) || 0;
-
-    // الحسابات
-    const revenue = sales * price;
-    const v2s = visitors > 0 && sales > 0 ? ((sales / visitors) * 100).toFixed(2) + '%' : '—'; // تحويل زائر لمشتري
-    const cac = sales > 0 && adspend > 0 ? (adspend / sales).toFixed(2) + ' ر.س' : '—'; // تكلفة الحصول على عميل
-
-    // تحديث الواجهة
-    document.getElementById('kpi_v2s').textContent = v2s;
-    document.getElementById('kpi_rev').textContent = `${revenue.toFixed(2)}${CURRENCY_STRING}`; // استخدام العملة الجديدة
-    document.getElementById('kpi_cac').textContent = cac;
-}
-
-
-/* =============================
-   AI Prompt Generation (Pages 32 & 33)
-   ============================= */
-function copyToClipboard(text, successMessage) {
-    if (!navigator.clipboard) {
-        alert("متصفحك لا يدعم النسخ التلقائي. يرجى النسخ يدوياً: " + text);
-        return;
-    }
-    navigator.clipboard.writeText(text).then(() => {
-        alert(successMessage);
-    }, (err) => {
-        alert('فشل في النسخ: ' + err);
-    });
-}
-
-function copyAIPrompt() {
-    const productType = document.getElementById('ai_product_type').value;
-    const painPoint = document.getElementById('ai_pain_point').value;
-    const competitors = document.getElementById('ai_competitors').value;
-    const usp = document.getElementById('ai_usp').value;
-
-    const prompt = `
-    أريد منك أن تكون محلل تسويق محترف. قم بتحليل المنتج التالي والملاءمة السوقية الخاصة به، ثم اقترح أفضل استراتيجيتين تسويقيتين.
-
-    **اسم المنتج**: اجندة المليون التفاعلية 2026
-    **نوع المنتج**: ${productType}
-    **المشكلة الرئيسية التي يحلها**: ${painPoint}
-    **المنافسون**: ${competitors}
-    **الميزة التنافسية (USP)**: ${usp}
-
-    **المخرجات المطلوبة**:
-    1. تحليل نقاط القوة والضعف والفرص والتهديدات (SWOT Analysis).
-    2. أفضل استراتيجيتين تسويقيتين لإطلاق هذا المنتج في السوق العربي.
-    3. اقتراح سعر أساسي بناءً على USP.
-    `;
-    copyToClipboard(prompt, 'تم نسخ تحليل المنتج بنجاح! الصقه في أداة الذكاء الاصطناعي.');
-}
-
-function copyScenarioPrompt() {
-    const platform = document.getElementById('scenario_platform').value;
-    const goal = document.getElementById('scenario_goal').value;
-    const audience = document.getElementById('scenario_audience').value;
-    const bigIdea = document.getElementById('scenario_big_idea').value;
-
-    const prompt = `
-    أريد منك أن تكون مُنشئ محتوى محترف. قم بتوليد سيناريو تسويقي كامل لـ "اجندة المليون التفاعلية 2026".
-
-    **المنتج**: اجندة المليون التفاعلية 2026 للنجاح الرقمي.
-    **المنصة المستهدفة**: ${platform}
-    **الهدف من هذا المحتوى**: ${goal}
-    **الجمهور المستهدف**: ${audience}
-    **الفكرة الرئيسية للمحتوى (The Big Idea)**: ${bigIdea}
-
-    **المخرجات المطلوبة**:
-    1. عنوان رئيسي جذاب ومقنع (Hook).
-    2. نص إعلاني مفصل ومقسم إلى فقرات قصيرة.
-    3. عبارة تحفيزية للعمل (CTA) تتناسب مع الهدف المحدد.
-    `;
-    copyToClipboard(prompt, 'تم نسخ السيناريو التسويقي بنجاح! الصقه في أداة الذكاء الاصطناعي.');
-}
-
-
-/* =============================
-   Misc Functions
-   ============================= */
-
-function downloadHtml() {
-    alert('تنبيه: هذه الدالة تتطلب المزيد من الأذونات. يمكنك حفظ الصفحة يدوياً عبر قائمة المتصفح (ملف -> حفظ باسم).');
-}
-
-// دالة التحميل الأولي (تنفذ عند الانتهاء من بناء الصفحة)
-document.addEventListener('DOMContentLoaded', () => {
-    loadInitialState();
-});
-</script>
-
+            // 4. ط¥ط؛ظ„ط§ظ‚ ط§ظ„ظ‚ط§ط¦ظ…ط© ط¹ظ†ط¯ ط§ظ„ط¶ط؛ط· ط¹ظ„ظ‰ ط±ط§ط¨ط· ظپظٹ ط§ظ„ط¬ظˆط§ظ„
+            indexList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    const sidebar = document.getElementById('sidebar');
+                    if (sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+
