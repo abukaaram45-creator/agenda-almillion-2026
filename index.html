@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
@@ -64,6 +65,9 @@
             justify-content:space-between;
             border-bottom-left-radius:16px;
             border-bottom-right-radius:16px;
+            position:sticky; /* لجعل الهيدر ثابتاً في الأعلى */
+            top:0;
+            z-index:200;
         }
         .header-left{
             display:flex;
@@ -147,9 +151,9 @@
             background:var(--card);
             border-radius:var(--radius);
             box-shadow:0 0 40px rgba(0,0,0,0.05);
-            position:fixed;
-            top:100px;
-            height:calc(100vh - 120px);
+            position:sticky; /* نجعلها ثابتة مع التمرير */
+            top:120px;
+            height:calc(100vh - 140px);
             overflow-y:auto;
             z-index:100;
         }
@@ -177,21 +181,34 @@
         .index-list a:hover,.index-list a.active{
             color:var(--g1);
             text-decoration:none;
+            font-weight:bold; /* تأثير النشاط */
         }
         /* *********************************
            Content Area
            ********************************* */
+        .content-wrapper{
+            display:flex;
+            gap:20px;
+            margin-top:20px;
+        }
         .content{
-            margin-right:270px; /* مسافة لجانب القائمة */
+            flex-grow:1;
             padding:20px;
             background:var(--card);
             border-radius:var(--radius);
             box-shadow:0 0 40px rgba(0,0,0,0.05);
         }
         .page{
-            display:none;
+            /* **تعديل: إزالة display: none وإبقاء block لتعرض جميع الصفحات** */
+            display:block; 
             padding:20px 0;
             border-bottom:1px solid var(--border);
+            /* إضافة هامش علوي لمنع الصفحات من الالتصاق ببعضها */
+            margin-top: 20px; 
+            scroll-margin-top: 140px; /* لضمان التمرير الصحيح أسفل الهيدر الثابت */
+        }
+        .page:first-child{
+            margin-top: 0;
         }
         .page:last-child{
             border-bottom:none;
@@ -231,6 +248,10 @@
            Mobile Adjustments
            ********************************* */
         @media (max-width: 900px) {
+            .content-wrapper {
+                flex-direction: column;
+                gap: 0;
+            }
             .sidebar {
                 display: none;
                 width: 100%;
@@ -246,9 +267,6 @@
             }
             .sidebar.open {
                 display: block;
-            }
-            .content {
-                margin-right: 0;
             }
             .mobile-tools {
                 display: block !important;
@@ -296,46 +314,72 @@
 
 
     <div class="container">
-        <div class="sidebar" id="sidebar">
-            <div class="index-title">
-                المرجع السريع
-                <h3 style="color: var(--g1); margin-top: 5px;">محتويات اجندة المليون التفاعلية 2026</h3>
-            </div>
-            <ul class="index-list" id="indexList">
+        <div class="content-wrapper"> <div class="sidebar" id="sidebar">
+                <div class="index-title">
+                    المرجع السريع
+                    <h3 style="color: var(--g1); margin-top: 5px;">محتويات اجندة المليون التفاعلية 2026</h3>
+                </div>
+                <input type="search" id="searchInput" placeholder="ابحث باسم الصفحة أو رقمها..." style="width:100%; padding:8px; margin-bottom:10px; border:1px solid var(--border); border-radius:8px;">
+                <ul class="index-list" id="indexList">
                 </ul>
-        </div>
-
-        <div class="content" id="content">
             </div>
+    
+            <div class="content" id="content">
+            </div>
+        </div>
     </div>
 
     <script>
-        // بيانات الصفحات (تم تبسيطها لضمان عمل التنقل)
+        // مصفوفة البيانات (الـ 34 صفحة)
         const pagesData = [
-            { id: 'page1', title: 'مقدمة الأجندة', content: 'هنا محتوى الصفحة الأولى، وهي مقدمة عامة عن الأجندة وأهدافها للعام 2026. يمكنك وضع أي نص أو صور هنا.' },
-            { id: 'page2', title: 'الرؤية والأهداف', content: 'في هذه الصفحة، نحدد الرؤية الطموحة والأهداف الرئيسية التي نسعى لتحقيقها خلال العام. التركيز على الأهداف الذكية (SMART).' },
-            { id: 'page3', title: 'تخطيط الربع الأول', content: 'تفاصيل خطة العمل للربع الأول من العام، بما في ذلك المهام المحددة والمواعيد النهائية.' },
-            { id: 'page4', title: 'تخطيط الربع الثاني', content: 'تفاصيل خطة العمل للربع الثاني من العام، مع مراجعة وتقييم لأداء الربع الأول.' },
-            { id: 'page5', title: 'قسم خصم الأطفال', content: 'هذا القسم مخصص لتفاصيل خصم الأطفال، وكيفية الاستفادة منه، والشروط والأحكام.' },
-            { id: 'page6', title: 'ملخص وخاتمة', content: 'ملخص لأهم النقاط التي تم تناولها في الأجندة، وخطوات العمل التالية.' }
+            { id: 'page1', title: '1. الغلاف', content: 'اجندة المليون التفاعلية 2026<br>الدليل التفاعلي الشامل للنجاح الرقمي — MR PRO' },
+            { id: 'page2', title: '2. إهداء', content: 'هذه الأجندة إهداء لكل رائد أعمال يبحث عن النجاح الرقمي.' },
+            { id: 'page3', title: '3. مقدمة', content: 'مرحباً بك في أجندة المليون التفاعلية 2026! دليلك التفاعلي الشامل نحو النجاح الرقمي.' },
+            { id: 'page4', title: '4. كيف تستخدم الأجندة التفاعلية', content: 'شرح مفصل لطريقة استخدام الأدوات التفاعلية في الأجندة.' },
+            { id: 'page5', title: '5. من أنا اليوم؟', content: 'تقييم ذاتي للموقف الحالي والمهارات المتاحة.' },
+            { id: 'page6', title: '6. نسخة أحلامي', content: 'تحديد وصياغة الأهداف والأحلام الطويلة الأجل.' },
+            { id: 'page7', title: '7. قيم حياتي', content: 'تحديد القيم الأساسية التي توجه قراراتك وأعمالك.' },
+            { id: 'page8', title: '8. اختبار شخصية بسيط', content: 'اختبار سريع لتحديد نوع شخصيتك ونقاط القوة والضعف.' },
+            { id: 'page9', title: '9. لوحة أهداف 2025', content: 'لوحة عمل بصرية لتتبع الأهداف المحددة.' },
+            { id: 'page10', title: '10. خطة 12 أسبوع', content: 'تخطيط مفصل لـ 12 أسبوعاً مقبلة.' },
+            { id: 'page11', title: '11. قائمة الأولويات', content: 'طريقة ديزنهاور لتحديد الأولويات الهامة والعاجلة.' },
+            { id: 'page12', title: '12. روتين الصباح', content: 'خطة لروتين صباحي فعال ومنتج.' },
+            { id: 'page13', title: '13. روتين المساء', content: 'خطة لروتين مسائي يساعد على الاستعداد لليوم التالي.' },
+            { id: 'page14', title: '14. Mood Tracker', content: 'متتبع الحالة المزاجية لتحليل الأنماط العاطفية.' },
+            { id: 'page15', title: '15. Habit Tracker', content: 'متتبع العادات اليومية والشهرية.' },
+            { id: 'page16', title: '16. Sleep Tracker', content: 'متتبع النوم لتحسين جودة الراحة.' },
+            { id: 'page17', title: '17. قياس مؤشرات الأداء (KPIs)', content: 'حاسبة تفاعلية لمؤشرات الأداء الرئيسية (KPIs).' },
+            { id: 'page18', title: '18. تحليل المنافسين', content: 'أدوات ونماذج لتحليل المنافسين في السوق الرقمي.' },
+            { id: 'page19', title: '19. تحديد الجمهور المستهدف', content: 'نماذج بناء شخصية المشتري (Buyer Persona).' },
+            { id: 'page20', title: '20. استراتيجية المحتوى', content: 'خطة متكاملة لإنشاء ونشر المحتوى.' },
+            { id: 'page21', title: '21. ميزانية التسويق', content: 'أداة لتوزيع ميزانية التسويق الرقمي.' },
+            { id: 'page22', title: '22. حملات إعلانية ناجحة', content: 'دليل لأفضل ممارسات الحملات الإعلانية المدفوعة.' },
+            { id: 'page23', title: '23. بناء قائمة بريدية', content: 'خطوات بناء قائمة بريدية فعالة ومستهدفة.' },
+            { id: 'page24', title: '24. تحسين محركات البحث (SEO)', content: 'قائمة تحقق (Checklist) لأهم عوامل SEO.' },
+            { id: 'page25', title: '25. التسويق بالمؤثرين', content: 'نموذج لتخطيط وإدارة حملات المؤثرين.' },
+            { id: 'page26', title: '26. إدارة وسائل التواصل', content: 'أدوات ومنصات إدارة وسائل التواصل الاجتماعي.' },
+            { id: 'page27', title: '27. تحليل البيانات', content: 'مقدمة في أدوات تحليل البيانات (Analytics).' },
+            { id: 'page28', title: '28. نظام الخصم الذكي', content: 'كيفية استخدام نظام الخصم الذكي لجذب العملاء.' },
+            { id: 'page29', title: '29. النمو السريع (Growth Hacking)', content: 'تقنيات سريعة لزيادة عدد المستخدمين والمبيعات.' },
+            { id: 'page30', title: '30. بناء الفريق', content: 'دليل لتوظيف وإدارة فريق العمل الرقمي.' },
+            { id: 'page31', title: '31. الأدوات التقنية الضرورية', content: 'قائمة بالأدوات والبرامج الأساسية للعمل.' },
+            { id: 'page32', title: '32. جلسة تفكير مفتوحة', content: 'قسم لتدوين الأفكار والمشاريع الجديدة.' },
+            { id: 'page33', title: '33. قسم خصم الأطفال', content: 'تفاصيل الخصم والشروط والأحكام الخاصة بالأطفال.' },
+            { id: 'page34', title: '34. ملخص وختام 2026', content: 'ملخص نهائي لعام 2026 وأهداف العام التالي.' }
         ];
 
-        let currentPageIndex = 0;
-
-        // وظيفة إظهار الصفحة
+        // وظيفة التمرير للصفحة المطلوبة
         function showPage(index) {
-            const pages = document.querySelectorAll('.page');
+            const pageElement = document.getElementById(pagesData[index].id);
             const links = document.querySelectorAll('#indexList a');
             
-            // إخفاء جميع الصفحات
-            pages.forEach(page => page.style.display = 'none');
+            // إلغاء تفعيل كل الروابط
             links.forEach(link => link.classList.remove('active'));
 
-            // إظهار الصفحة المطلوبة
-            if (pages[index]) {
-                pages[index].style.display = 'block';
-                currentPageIndex = index;
-                
+            if (pageElement) {
+                // التمرير إلى الصفحة المطلوبة بسلاسة
+                pageElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
                 // تفعيل الرابط في القائمة الجانبية
                 const pageId = pagesData[index].id;
                 const activeLink = document.querySelector(`#indexList a[data-page-id="${pageId}"]`);
@@ -345,21 +389,35 @@
             }
         }
 
-        // وظيفة التنقل للصفحة التالية
+        // وظيفة التنقل للصفحة التالية (تقوم بالتمرير)
         function nextPage() {
-            if (currentPageIndex < pagesData.length - 1) {
-                showPage(currentPageIndex + 1);
+            const currentActiveLink = document.querySelector('#indexList a.active');
+            let currentIndex = 0;
+            if (currentActiveLink) {
+                const pageId = currentActiveLink.getAttribute('data-page-id');
+                currentIndex = pagesData.findIndex(p => p.id === pageId);
+            }
+            
+            if (currentIndex < pagesData.length - 1) {
+                showPage(currentIndex + 1);
             }
         }
 
-        // وظيفة التنقل للصفحة السابقة
+        // وظيفة التنقل للصفحة السابقة (تقوم بالتمرير)
         function prevPage() {
-            if (currentPageIndex > 0) {
-                showPage(currentPageIndex - 1);
+            const currentActiveLink = document.querySelector('#indexList a.active');
+            let currentIndex = 0;
+            if (currentActiveLink) {
+                const pageId = currentActiveLink.getAttribute('data-page-id');
+                currentIndex = pagesData.findIndex(p => p.id === pageId);
+            }
+            
+            if (currentIndex > 0) {
+                showPage(currentIndex - 1);
             }
         }
 
-        // وظيفة تحميل HTML (تنزيل الملف الحالي)
+        // [باقي الدوال (downloadHtml, scrollToKidsSection, toggleSidebar) تبقى كما هي]
         function downloadHtml() {
             const htmlContent = document.documentElement.outerHTML;
             const blob = new Blob([htmlContent], { type: 'text/html' });
@@ -372,17 +430,11 @@
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         }
-
-        // وظيفة التمرير إلى قسم خصم الأطفال (لزر "خصم الأطفال")
         function scrollToKidsSection() {
-            const kidsPage = document.getElementById('page5'); // نفترض أن صفحة الأطفال هي الخامسة
-            if (kidsPage) {
-                showPage(4); // إظهار الصفحة الخامسة (index 4)
-                // يمكن إضافة تمرير سلس هنا إذا لزم الأمر
-            }
+            // صفحة "قسم خصم الأطفال" هي رقم 33، ومؤشرها هو 32 (index)
+            showPage(32); 
         }
 
-        // وظيفة تبديل القائمة الجانبية في وضع الجوال
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('open');
@@ -411,20 +463,21 @@
                         </div>
                         <p>${page.content}</p>
                         <div class="page-actions">
-                            <button class="btn ghost" onclick="prevPage()" ${index === 0 ? 'disabled' : ''}>السابق</button>
-                            <button class="btn" onclick="nextPage()" ${index === pagesData.length - 1 ? 'disabled' : ''}>التالي</button>
+                            <button class="btn ghost" onclick="showPage(${index - 1})" ${index === 0 ? 'disabled' : ''}>السابق</button>
+                            <button class="btn" onclick="showPage(${index + 1})" ${index === pagesData.length - 1 ? 'disabled' : ''}>التالي</button>
                         </div>
                     </div>
                 `;
                 
                 // توليد روابط القائمة الجانبية
-                indexHTML += `<li><a href="#" data-page-id="${page.id}" onclick="showPage(${index}); return false;">${page.title}</a></li>`;
+                indexHTML += `<li><a href="#${page.id}" data-page-id="${page.id}" onclick="showPage(${index}); return false;">${page.title}</a></li>`;
             });
             
             content.innerHTML = contentHTML;
             indexList.innerHTML = indexHTML;
 
-            // 2. إظهار الصفحة الأولى عند التحميل
+            // 2. تفعيل الصفحة الأولى عند التحميل
+            // نستخدم showPage(0) لتفعيل الرابط في القائمة الجانبية (active class)
             showPage(0);
 
             // 3. تفعيل زر القائمة في الجوال
@@ -440,6 +493,27 @@
                         sidebar.classList.remove('open');
                     }
                 });
+            });
+            
+            // 5. وظيفة تفعيل الرابط النشط عند التمرير (لتحقيق التفاعلية الكاملة المطلوبة)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // إزالة التفعيل من جميع الروابط
+                        document.querySelectorAll('#indexList a').forEach(link => link.classList.remove('active'));
+                        
+                        // تفعيل الرابط المطابق
+                        const pageId = entry.target.id;
+                        const activeLink = document.querySelector(`#indexList a[data-page-id="${pageId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }, { rootMargin: '-100px 0px -80% 0px' }); // يحدد متى يعتبر القسم مرئياً (أعلى الشاشة تقريباً)
+
+            document.querySelectorAll('.page').forEach(page => {
+                observer.observe(page);
             });
         });
     </script>
